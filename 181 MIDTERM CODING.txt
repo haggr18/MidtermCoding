@@ -1,0 +1,84 @@
+//Ryan Haggerty
+
+//Abstract class shape
+public abstract class Shape
+{
+	public abstract area();
+	public abstract perimeter();	
+
+}
+
+//Class rectangle
+public class Rectangle extends Shape
+{
+	private double width, length;
+	
+	public double getLength() {
+		return length;
+	}
+
+	public double getWidth() {
+		return width;
+	}
+
+	public void setLength(double length1) {
+		this.length = length1;
+	}
+	
+	public void setWidth(double width1) {
+		this.width = width1;
+
+	@Override
+	//Area of rectangle
+	public double area() {
+		return width * length;
+	}
+	
+	@Override
+	//perimeter of rectangle
+	public double perimeter() {
+		return 2 * (width + length);
+	}
+
+}
+
+public class Cuboid extends Rectangle 
+{
+	private double width, length, depth;
+	
+	public double getDepth() {
+		return depth;
+	}
+
+	public void setdepth {
+		this.depth = depth;
+	}
+
+	@Override
+	//Surface area of cuboid
+	public double area() {
+		return (2 * length * width) + (2 * length * height) + (2 * width * 		height);
+	}
+}
+
+
+
+//Tests for shapes
+public class TestShape {
+
+	// Rectangle test
+	@test
+	Rectangle testRectangle = new Rectangle(2,2);
+	assertEquals(testRectangle.width(), 2);
+	assertEquals(testRectangle.length(), 2);
+	assertEquals(testRectangle.area(), 4);
+	assertEquals(testRectangle.perimeter(), 8);
+
+	@test
+	Cuboid testCuboid = new Cuboid(1,1,1);
+	assertEquals(testCuboid.width, 1);
+	assertEquals(testCuboid.length, 1);
+	assertEquals(testCuboid.depth, 1);
+	assertEquals(testCuboid.area, 6);
+	
+}
